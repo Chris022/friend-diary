@@ -11,7 +11,7 @@ import format  from 'date-fns/format'
 
 const axios = require('axios');
 
-axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.baseURL = '/';
 
 export function fetchDaysLeft() {
   return function(dispatch) {
