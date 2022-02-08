@@ -1,0 +1,8 @@
+export const CHANGE_DATE = "CHANGE_DATE"
+export const CHANGE_ENTRY_TEXT = "CHANGE_ENTRY_TEXT"
+export const SAVE_ENTRYS = "SAVE_ENTRYS"
+export const DELTE_TODO = "DELTE_TODO"
+export const ADD_TODO = "ADD_TODO"
+export const FETCH_DAYSLEFT = "FETCH_DAYSLEFT"
+export const FETCH_ENTRYS = "FETCH_ENTRYS"
+export const FETCH_TODOS = "FETCH_TODOS"
