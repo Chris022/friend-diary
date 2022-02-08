@@ -5,6 +5,7 @@ import EntryTextField from "./EntryTextField"
 import SaveButton from "./SaveButton";
 import ToDoList from "./ToDoList";
 
+import settings from "./../../../../../public/settings.json"
 
 
 const App = () => {
@@ -14,8 +15,8 @@ const App = () => {
       <Center>
         <DayCounter />
         <DateSelector/>
-        <EntryTextField label="Kay" id="0"/>
-        <EntryTextField label="Chris" id="1"/>
+        <EntryTextField label={settings.users[0]} id="0"/>
+        <EntryTextField label={settings.users[1]} id="1"/>
         <SaveButton/>
         <ToDoList/>
       </Center>
