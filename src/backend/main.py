@@ -3,18 +3,21 @@ from bottle import Bottle, run, request,static_file,response,default_app, respon
 from bottle_cors_plugin import cors_plugin
 from datetime import date, time, datetime
 from dateutil import parser, tz
+from parso import parse
 
 from dataTypes import *
 from dataBase import *
 
 import json as jsonF
 
+#load settings json
+settings = jsonF.load(open("./../../public/settings.json","r"))
 
 application = Bottle()
 application.install(cors_plugin("*"))
 
-dateDone = date(year=2021, month=7, day=7)
-
+dateDone = datetime.strptime(settings["date"], "%d-%m-%Y").date()
+print(dateDone)
 @application.route('/<:re:.*>', method='OPTIONS')
 def cors():
     pass
