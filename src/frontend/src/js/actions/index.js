@@ -36,7 +36,7 @@ export function fetchEntrys() {
     .then(json => 
       dispatch(
         {
-          entrys:{"0":json.dataKay,"1":json.dataChris},
+          entrys:{"0":json.data1,"1":json.data2},
           type:FETCH_ENTRYS
         }
       )
@@ -83,8 +83,8 @@ export function saveEntrys() {
   return function(dispatch,getState) {
     axios.post('/days',{
       date: format(getState().selectedDate,"yyyy-MM-dd"),
-      dataChris: getState().entrys["1"],
-      dataKay: getState().entrys["0"]
+      data2: getState().entrys["1"],
+      data1: getState().entrys["0"]
     })
     .then(() => 
       dispatch(
