@@ -9,12 +9,12 @@ con = sqlite3.connect('data.db')
 cur = con.cursor()
 
 cur.execute('''CREATE TABLE IF NOT EXISTS days
-               (id integer primary key autoincrement, date text unique, dataChris text, dataKay text);''')
+               (id integer primary key autoincrement, date text unique, data2 text, data1 text);''')
 cur.execute('''CREATE TABLE IF NOT EXISTS todo
                (id integer primary key autoincrement, toDo text);''')
 
 def getEntry(date):
-    cur.execute("SELECT date,dataChris,dataKay,id FROM days WHERE date = ?",[date])
+    cur.execute("SELECT date,data2,data1,id FROM days WHERE date = ?",[date])
     obj = cur.fetchone()
     if(obj == None):
         return {}
@@ -23,12 +23,12 @@ def getEntry(date):
 
 def addEntry(day:list):
     # Insert a row of data
-    cur.execute("INSERT INTO days (date,dataChris,dataKay) VALUES (:date,:dataChris,:dataKay)", day)
+    cur.execute("INSERT INTO days (date,data2,data1) VALUES (:date,:data2,:data1)", day)
     # Save (commit) the changes
     con.commit()
 
 def updateOrCreateEntry(day:list):
-    cur.execute("INSERT OR REPLACE INTO days (id, date,dataChris,dataKay) VALUES(:id, :date, :dataChris, :dataKay);",day)
+    cur.execute("INSERT OR REPLACE INTO days (id, date,data2,data1) VALUES(:id, :date, :data2, :data1);",day)
     
     # Save (commit) the changes
     con.commit()

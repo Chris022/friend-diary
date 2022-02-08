@@ -48,7 +48,7 @@ def getDaysLeft():
 
 @application.post('/days')
 def post():
-    data = {"id":request.json.get('id'),"date":str(request.json.get('date')),"dataChris":request.json.get('dataChris'),"dataKay":request.json.get('dataKay')}
+    data = {"id":request.json.get('id'),"date":str(request.json.get('date')),"data1":request.json.get('data1'),"data2":request.json.get('data2')}
     updateOrCreateEntry(data)
 
 @application.get('/toDo')
