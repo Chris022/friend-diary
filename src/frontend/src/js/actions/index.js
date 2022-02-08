@@ -7,7 +7,7 @@ import { FETCH_DAYSLEFT } from "../constants/action-types";
 import { FETCH_TODOS } from "../constants/action-types";
 import { FETCH_ENTRYS } from "../constants/action-types";
 
-import { format } from 'date-fns'
+import format  from 'date-fns/format'
 
 const axios = require('axios');
 
